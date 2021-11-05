@@ -925,6 +925,14 @@ const checkWhitePawnPossibleMoves = (zero,one) => {
         if (seeCurrentPiece(check0) === 'empty') {
             pawnPossibleMoves.push(check0);
         }
+        if (num1 === 6) {
+            let check20 = num0.toString();
+            let check21 = (num1-2).toString();
+            check20 = check20.concat(check21);
+            if (seeCurrentPiece(check20) === 'empty'){
+                pawnPossibleMoves.push(check20);
+            }
+        }
         // check attacking spot above pawn
         if(num0>0){    
             let atk10 = (num0 - 1).toString();
@@ -958,6 +966,14 @@ const checkBlackPawnPossibleMoves = (zero,one) => {
         check0 = check0.concat(check1);
         if (seeCurrentPiece(check0) === 'empty') {
             pawnPossibleMoves.push(check0);
+        }
+        if (num1 === 1) {
+            let check20 = num0.toString();
+            let check21 = (num1+2).toString();
+            check20 = check20.concat(check21);
+            if (seeCurrentPiece(check20) === 'empty'){
+                pawnPossibleMoves.push(check20);
+            }
         }
         // check attacking spot above pawn
         if(num0>0){    
