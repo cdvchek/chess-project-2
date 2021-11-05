@@ -41,8 +41,15 @@ const backFromLobbyBtn = document.getElementById('back-btn');
 // TODO: somehow figure out how to get the lobby id
 backFromLobbyBtn.addEventListener('click', (event) => {
     event.preventDefault();
-
+    fetch('/profile').then(res => {
+        if(res.ok) {
+            document.location.replace('/profile');
+        } else {
+            throw (err);
+        }
+    })
 });
+
 
 const opponent = document.getElementById('users2');
 socket.on('player joining lobby', (id) => {

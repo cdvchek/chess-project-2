@@ -96,7 +96,7 @@ exports = module.exports = function (io) {
                 if(stopper==0){
                     clearInterval(interval);
                 }
-            },1000)
+            },5000)
         }
         function moveSubmitted(socketObj) {
             const hostID = socketObj.hostID;
