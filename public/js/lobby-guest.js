@@ -30,3 +30,7 @@ socket.on('start the game', (socketObj) => {
     socket.emit('moving to gameboard',socketObj)
     document.location.replace('/gameboard');
 });
+
+socket.on('host left', () => {
+    document.location.replace('/profile');
+});

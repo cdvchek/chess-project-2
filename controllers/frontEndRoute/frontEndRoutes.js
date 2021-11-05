@@ -44,6 +44,20 @@ router.get("/lobby", (req,res)=>{
     }).then(userData=>{
         const hbsUser = userData.get({plain:true});
         console.log(hbsUser);
+        const strFriends = userData.friends_list;
+        const friendsArr = strFriends.split(' ');
+        hbsUser.friend = []
+        for (let i = 0; i < friendsArr.length; i++) {
+            if(i!==0){
+                const friendID = friendsArr[i].split(',')[0];
+                const friendUsername = friendsArr[i].split(',')[1];
+                const friendObj = {
+                    username: friendUsername,
+                    id: friendID
+                }
+                hbsUser.friend.push(friendObj);
+            }
+        };
         res.render("lobby", hbsUser)
     })
 });

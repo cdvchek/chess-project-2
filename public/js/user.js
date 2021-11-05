@@ -49,16 +49,38 @@ addFriendBtn.addEventListener('click', (event) => {
     const friendEmail = document.getElementById('email-login').value;
     fetch('/sessions').then(res => {
         if (res.ok) {
-            res.json().then(res => {
-            console.log(res)
-            const socketObj = {
-                email: friendEmail,
-                id: res.user.id
-            }
-            socket.emit('send friend request', socketObj);
-            console.log(socketObj);
-            location.reload();
-        })
+            res.json().then(response => {
+                fetch('/api/users').then(res => {
+                    res.json().then(res => {
+                        let canReq = true;
+                        for (let i = 0; i < res.UserData.length; i++) {
+                            if (res.UserData[i].email === friendEmail){
+                                const friendsListArr = res.UserData[i].friends_list.split(' ');
+                                for (let i = 0; i < friendsListArr.length; i++) {
+                                    const potId = friendsListArr[i].split(',')[0];
+                                    console.log(potId);
+                                    console.log(response.user.id);
+                                    console.log('=========-=-=-=-=-=-===============')
+                                    if(response.user.id.toString() === potId){
+                                        console.log('i found an imposter');
+                                        canReq = false;
+                                    }
+                                }
+                            }
+                        }
+                        if(canReq){
+                            const socketObj = {
+                                email: friendEmail,
+                                id: response.user.id
+                            }
+                            socket.emit('send friend request', socketObj);
+                            location.reload();
+                        } else {
+                            alert('You are already friends with this user!')
+                        }
+                    })
+                })
+            })
         } else {
             // TODO: Show that there was an error and that the friend request wasn't sent
             throw (err)

@@ -925,6 +925,14 @@ const checkWhitePawnPossibleMoves = (zero,one) => {
         if (seeCurrentPiece(check0) === 'empty') {
             pawnPossibleMoves.push(check0);
         }
+        if (num1 === 6) {
+            let check20 = num0.toString();
+            let check21 = (num1-2).toString();
+            check20 = check20.concat(check21);
+            if (seeCurrentPiece(check20) === 'empty'){
+                pawnPossibleMoves.push(check20);
+            }
+        }
         // check attacking spot above pawn
         if(num0>0){    
             let atk10 = (num0 - 1).toString();
@@ -958,6 +966,14 @@ const checkBlackPawnPossibleMoves = (zero,one) => {
         check0 = check0.concat(check1);
         if (seeCurrentPiece(check0) === 'empty') {
             pawnPossibleMoves.push(check0);
+        }
+        if (num1 === 1) {
+            let check20 = num0.toString();
+            let check21 = (num1+2).toString();
+            check20 = check20.concat(check21);
+            if (seeCurrentPiece(check20) === 'empty'){
+                pawnPossibleMoves.push(check20);
+            }
         }
         // check attacking spot above pawn
         if(num0>0){    
@@ -1053,62 +1069,27 @@ socket.on('opponent moved', (socketObj) => {
     updateOpponentMove(socketObj.gameboard);
     playerTurn = Math.abs(playerTurn-1);
 });
-socket.on('you won', (socketObj) => {
-    console.log('you have won the game!');
-    if(user.color === 'w'){
-        fetch('/api/users/'+socketObj.hostID).then(res => {res.json().then(res => {
-            console.log(res);
-        })})
+socket.on('game over', (socketObj) => {
+    if(socketObj.winner === 'w'){
+        if(socketObj.winner === user.color){
+            console.log('you won the game!');
+            // TODO: update host stats to reflect that they won
+            document.location.replace('/profile')
+        } else {
+            console.log('you lost the game!');
+            // TODO: update opponent stats to reflect that they lost
+            document.location.replace('/profile')
+        }
     } else {
-        fetch('/api/users/'+socketObj.opponentID).then(res => {res.json().then(res => {
-            console.log(res);
-        })})
-    }
-});
-socket.on('you lost', (socketObj) => {
-    console.log('you have lost the game!');
-    if(user.color === 'w'){
-        fetch('/api/users/'+socketObj.hostID).then(res => {res.json().then(res => {
-            console.log(res);
-            const ngames = res.UserData.ngames;
-            const user_rank = res.UserData.user_rank;
-            ngames++;
-            if (user_rank < 15) {
-                user_rank = 0;
-            } else {
-                user_rank = user_rank - 15;
-            }
-            return {ngames, user_rank};
-        })})
-        .then(res => {
-            fetch(`/api/users/`+socketObj.opponentID, {
-            method: 'PUT',
-            body: JSON.stringify(res),
-            headers: {
-              'Content-Type': 'application/json',
-            },
-        }).then(document.location.replace('/profile'))})
-    } else {
-        fetch('/api/users/'+socketObj.opponentID).then(res => {res.json().then(res => {
-            console.log(res);
-            const ngames = res.UserData.ngames;
-            const user_rank = res.UserData.user_rank;
-            ngames++;
-            if (user_rank < 15) {
-                user_rank = 0;
-            } else {
-                user_rank = user_rank - 15;
-            }
-            return {ngames, user_rank};
-        })})
-        .then(res => {
-            fetch(`/api/users/`+socketObj.opponentID, {
-            method: 'PUT',
-            body: JSON.stringify(res),
-            headers: {
-              'Content-Type': 'application/json',
-            },
-        }).then(document.location.replace('/profile'))})
+        if(socketObj.winner === user.color){
+            console.log('you won the game!');
+            // TODO: update opponent stats to reflect that they won
+            document.location.replace('/profile')
+        } else {
+            console.log('you lost the game!');
+            // TODO: update host stats to reflect that they lost
+            document.location.replace('/profile')
+        }
     }
 });
 })
