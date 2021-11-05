@@ -121,24 +121,14 @@ exports = module.exports = function (io) {
                 }
             } else if (wKingLeft) {
                 console.log('white has won the game!');
-                socket.broadcast.to(opponentID + 'game').emit('you lost',socketObj);
-                const interval = setInterval(() => {
-                    socket.broadcast.to(hostID + 'game').emit('you won',socketObj);
-                    console.log(hostID);
-                    if(true){
-                        clearInterval(interval);
-                    }
-                },5000)
+                socketObj.winner = 'b';
+                io.sockets.in(opponentID + 'game').emit('game over',socketObj);
+                io.sockets.in(hostID + 'game').emit('game over',socketObj);
             } else {
                 console.log('black has won the game!');
-                socket.broadcast.to(hostID + 'game').emit('you lost',socketObj);
-                const interval = setInterval(() => {
-                socket.broadcast.to(opponentID + 'game').emit('you won',socketObj);
-                console.log(opponentID);
-                    if(true){
-                        clearInterval(interval);
-                    }
-                },1000)
+                socketObj.winner = 'b';
+                io.sockets.in(opponentID + 'game').emit('game over',socketObj);
+                io.sockets.in(hostID + 'game').emit('game over',socketObj);
             }
         }
     })
