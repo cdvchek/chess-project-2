@@ -535,6 +535,9 @@ img {
     color: white;
     text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
 }
+[data-Sel="yes"] {
+    border: 1px solid red;
+}
 
 
 /* .notification {
