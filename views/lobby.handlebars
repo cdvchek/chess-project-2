@@ -29,7 +29,11 @@
             </button>
             </div>
             <div class="modal-body">
-                <input type="text" id="friend-id">
+                <ul id="inv-friend-list">
+                    {{#each friend}}
+                        <li class="inv-li" data-ID="{{this.id}}">{{this.username}} | id:{{this.id}}</li>
+                    {{/each}}
+                </ul>
                 <button id="invite-your-friend-btn">Invite Friend</button>
             </div>
             <div class="modal-footer">

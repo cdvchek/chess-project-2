@@ -14,13 +14,30 @@ fetch('/sessions').then(res => {
         throw (err)
     }
 });
+let selectedFriendID;
+const invLi = document.getElementsByClassName('inv-li');
+console.log(invLi);
+for (let i = 0; i < invLi.length; i++) {
+    invLi[i].addEventListener('click', (event) => {
+        console.log('yes i did good');
+        event.preventDefault();
+        clearSelectedFriends();
+        selectedFriendID = event.target.getAttribute('data-ID');
+        event.target.setAttribute('data-Sel','yes');
+    });
+}
+const clearSelectedFriends = () => {
+    for (let i = 0; i < invLi.length; i++) {
+        invLi[i].setAttribute('data-Sel','no');
+    }
+}
 
 const invFriendBtn = document.getElementById('invite-your-friend-btn');
 // TODO: somehow figure out how to get the id of the friend you are inviting
 invFriendBtn.addEventListener('click', (event) => {
     event.preventDefault();
     console.log('something happened');
-    const friendID = document.getElementById('friend-id').value;
+    const friendID = selectedFriendID;
     fetch('/sessions').then(res => {
         if(res.ok) {
             res.json().then(res => {
