@@ -15,6 +15,7 @@ exports = module.exports = function (io) {
         socket.on('starting game', startGame)
         socket.on('moving to gameboard', moveToGame)
         socket.on('move submitted', moveSubmitted)
+        socket.on('host pressed back button', hostPressBackBtn)
 
         function friendReqAcc(socketObj) {
             const userId = socketObj.userId
@@ -130,6 +131,9 @@ exports = module.exports = function (io) {
                 io.sockets.in(opponentID + 'game').emit('game over',socketObj);
                 io.sockets.in(hostID + 'game').emit('game over',socketObj);
             }
+        }
+        function hostPressBackBtn(id) {
+            socket.broadcast.to(id+'game').emit('host left');
         }
     })
 }
