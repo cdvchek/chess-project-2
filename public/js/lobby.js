@@ -74,6 +74,9 @@ socket.on('player joining lobby', (id) => {
         userData.json().then(userData => {
         opponent.textContent = userData.UserData.username;
     })})
+    backFromLobbyBtn.addEventListener('click',(event) => {
+        socket.emit('host pressed back button',id)
+    })
     const startGameBtn = document.getElementById('start-btn');
     startGameBtn.addEventListener('click', (event) => {
         event.preventDefault();
