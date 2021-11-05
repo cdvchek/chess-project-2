@@ -1,0 +1,44 @@
+<div class="container border border-primary rounded-lg" id="lobby-page">
+        <form id="login-form" class="rounded mt-5 mb-5 mr-5 ml-5">
+
+            <h2 id="users">{{username}}</h2>
+            <h3>White</h3>
+            <!-- <h2></h2> -->
+            <h2 id="users2">empty</h2>
+            <h3>Black</h3>
+            
+        </form>
+        <div class="row" id="buttons">
+            <button type="button" class="col btn btn-primary btn-lg mt-3 mb-3" data-toggle="modal" data-target="#invFriendModal" id="invite-friend-btn"> Invite Friend </button>
+        </div>
+        <div class="row" id="buttons">
+            <button type="submit" class="col btn btn-success btn-lg mt-3 mb-3" id="start-btn"> Start </button>
+        </div>
+        <div class="row" id="buttons">
+            <button type="submit"  class="col btn btn-danger btn-lg mt-3 mb-5" id="back-btn"> Back </button>
+        </div>
+    </div>
+    {{!-- Modal --}}
+    <div class="modal fade" id="invFriendModal" tabindex="-1" role="dialog" aria-labelledby="invFriendLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="invFriendModalLabel"> Invite Friend</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="friend-id">
+                <button id="invite-your-friend-btn">Invite Friend</button>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/lobby.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>

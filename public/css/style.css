@@ -1,0 +1,609 @@
+:root {
+    --white:  #fff;
+    --orange:  #ee9c04;
+    --yellow:  #F3CD05;
+    --darkorange: #c27004;
+    --green:  #20e00fde;
+    --blue:  rgba(22, 78, 230, 0.829);
+    --red:  rgba(255, 0, 0, 0.623);
+    --black:  black;
+    --brown:  #774000d8;
+    --purple: rgb(52, 7, 90);
+    --green1: rgba(47, 194, 47, 0.753);
+    --blueish: rgb(9, 139, 133);
+    /* background: linear-gradient(to bottom, #ff6600 28%, #993300 100%); */
+} 
+
+body {
+    background-color: var(--orange);
+}
+
+h1 {
+    font-size: 100px;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    margin-bottom: 70px;
+    text-align: center;
+    color: var(--brown);
+    padding: 50px;
+    border-radius: 50px;
+}
+h2 {
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    
+}
+h3{
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+h5 {
+    text-align: center;
+    font-weight: bolder;
+
+}
+h6 {
+    text-align: center;
+    font-weight: bolder;
+
+}
+
+img {
+    margin-top: 100px;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation-name: circle;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+}
+/* Modal Content */
+
+.modal-header {
+    background-color:var(--yellow);
+
+    border:0px;
+}
+
+.modal-footer {
+    background-color:var(--yellow);
+
+    border:0px;
+}
+#modal-cont {
+    background-color:var(--yellow);
+
+    border:0px;
+
+}
+#modal-body {
+    background-color:var(--yellow);
+
+    border:0px;
+
+}
+.container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.top {
+    background-color:var(--yellow);
+    color:var(--darkorange);
+    font-weight: bold;
+}
+
+.bottom {
+    background-color: lightgray;
+    color:var(--brown);
+    font-weight: bolder;
+
+}
+
+.card-text {
+    text-align: center;
+}
+.card-img {
+    text-align: center;
+}
+
+.friends-list{
+
+}
+#totgam {
+    color: var(--orange);
+}
+#ngames-played {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    font-weight: bolder;
+
+}
+/* #addfr-btn {
+    background-color: greenyellow;
+    color: black;
+    font-weight: bolder;
+    border-color: darkgreen;
+    border: 2px solid darkgreen;
+} */
+#play-btn {
+    background-color: greenyellow;
+    color: black;
+    font-weight: bolder;
+    border-color: darkgreen;
+    border: 2px solid darkgreen;
+}
+#open-modal {
+    background-color: greenyellow;
+    color: black;
+    font-weight: bolder;
+    border-color: darkgreen;
+    border: 2px solid darkgreen;
+}
+#userpage-container {
+    position: absolute;
+    left: 17%;
+    top: 20%;
+}
+
+#king {
+    margin-top: 30px;
+    margin-left: 5px;
+    border-radius: 20px;
+    background-color: var(--purple);
+    
+}
+/* #addfriend-form {
+    
+} */
+#login-form {
+    background-color: lightgrey;
+    box-shadow: gray 2px 2px 5px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#add-friend-form {
+    /* background-color: lightgrey;
+    box-shadow: gray 2px 2px 5px;
+    padding: 5px;
+    border-radius: 5px; */
+}
+#signup-form {
+    background-color: lightgrey;
+    margin-top: 30px;
+    box-shadow: gray 2px 2px 5px;
+    padding: 5px;
+    border-radius: 5px;
+}
+#notif-form {
+    border:0px;
+    /* background-color: lightgrey; */
+    margin: 10px;
+    /* box-shadow: gray 2px 2px 5px; */
+    padding: 5px;
+    /* border-radius: 5px; */
+}
+#notif-form h3 {
+    width:100%;
+    justify-content: space-between;
+    border:0px;
+    /* background-color: lightgrey; */
+    margin: 10px;
+    /* box-shadow: gray 2px 2px 5px; */
+    padding: 5px;
+    /* border-radius: 5px; */
+}
+
+#username-form {
+    background-color: lightgrey;
+    box-shadow: gray 2px 2px 5px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: darkslateblue;
+    border: 4px outset purple;
+    
+}
+#users {
+    font-weight: bolder;
+    color: var(--purple);
+}
+#username {
+    font-size: 50px;
+    font-weight: bolder;
+    text-align: center;
+    letter-spacing: 1px;
+    color: rgb(10, 108, 116);
+    letter-spacing: 2px;
+    border: 4px solid var(--blueish) ;
+    margin-left: 50px;
+    margin-right: 50px;
+
+
+}
+#lobby-page{
+    background-color: var(--brown);
+    margin-top: 150px;
+    
+}
+
+#game-cont {
+    background-color: var(--blue);
+    margin-top: 50px;
+    margin-bottom: 50px;
+    align-items: center;
+    border: 40px solid var(--blue);
+    
+} 
+
+#rcorners3 {
+    background-color: rgb(73, 180, 73);
+    border-radius: 60px;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* width: 200px;
+    height: 150px; */
+}
+#background-gamepage {
+    background-color: maroon;
+    border-radius: 60px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/* #gbim {
+    
+} */
+
+/* #host-username {
+    text-align: center;
+} */
+/* #add-friend {
+    margin-left: 300px;
+    margin-right: 300px;
+    height: 50px;
+} */
+
+#friends-box{
+    background-color: darkslateblue;
+    border: 4px outset purple;
+    
+
+}
+
+
+#invite-friend-btn {
+    margin-left: 300px;
+    margin-right: 300px;
+    height: 50px;
+}
+#start-btn {
+    margin-left: 300px;
+    margin-right: 300px;
+    height: 50px;
+    background-color: var(--green);
+}
+#back-btn {
+    margin-left: 300px;
+    margin-right: 300px;
+    height: 50px;
+    background-color: var(--red);
+}
+#friend-request-list{
+    color:black;
+    list-style: none;
+}
+#friend-request-list li{
+        justify-content: space-between;
+
+
+}
+#game-invite-list{    color:black;
+    list-style: none;}
+
+#game-invite-list li{        justify-content: space-between;
+}
+
+.ulEl{
+
+}
+
+.tile {
+    height: 60px;
+}
+
+[data-Color="white"] {
+    background: white;
+}
+[data-Color="black"] {
+    background: black;
+}
+[data-Piece="b-Rook"] {
+    align-items:center;
+    margin: 0;
+    padding: 0;
+    font-size:300%;
+    color: black;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+[data-Piece="b-Knight"] {
+    align-items:center;
+    margin: 0;
+    padding: 0;
+    font-size:300%;
+    color: black;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+[data-Piece="b-Bishop"] {
+    align-items:center;
+    margin: 0;
+    padding: 0;
+    font-size:300%;
+    color: black;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;}
+[data-Piece="b-Queen"] {
+    align-items:center;
+    margin: 0;
+    padding: 0;
+    font-size:300%;
+    color: black;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+[data-Piece="b-King"] {
+    align-items:center;
+    margin: 0;
+    padding: 0;
+    font-size:300%;
+    color: black;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+[data-Piece="b-Pawn"] {
+    align-items:center;
+    margin: 0;
+    padding: 0;
+    font-size:300%;
+    color: black;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+[data-Piece="w-Rook"] {
+    align-items:center;
+    margin: 0;
+    padding: 0;
+    font-size:300%;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+[data-Piece="w-Knight"] {
+    align-items:center;
+    margin: 0;
+    padding: 0;
+    font-size:300%;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+[data-Piece="w-Bishop"] {
+    align-items:center;
+    margin: 0;
+    padding: 0;
+    font-size:300%;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+[data-Piece="w-Queen"] {
+    align-items:center;
+    margin: 0;
+    padding: 0;
+    font-size:300%;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+[data-Piece="w-King"] {
+    align-items:center;
+    margin: 0;
+    padding: 0;
+    font-size:300%;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+[data-Piece="w-Pawn"] {
+    align-items:center;
+    margin: 0;
+    padding: 0;
+    font-size:300%;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+[data-Piece="empty"] {
+    align-items:center;
+    margin: 0;
+    padding: 0;
+    font-size:300%;
+}
+[data-Piece="empty"] > p {
+    align-items:center;
+    margin: 0;
+    padding: 0;
+    font-size:300%;
+    visibility: hidden;
+}
+[data-Piece="possible"] {
+    align-items:center;
+    margin: 0;
+    padding: 0;
+    font-size:300%;
+    color: yellow;
+    text-shadow: -1px 0 orange, 0 1px orange, 1px 0 orange, 0 -1px orange;
+}
+
+[data-Piece="b-Rook-atk"] {
+    align-items:center;
+    margin: 0;
+    padding: 0;
+    font-size:300%;
+    color: black;
+    text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+}
+[data-Piece="b-Knight-atk"] {
+    align-items:center;
+    margin: 0;
+    padding: 0;
+    font-size:300%;
+    color: black;
+    text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+}
+[data-Piece="b-Bishop-atk"] {
+    align-items:center;
+    margin: 0;
+    padding: 0;
+    font-size:300%;
+    color: black;
+    text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+}
+[data-Piece="b-Queen-atk"] {
+    align-items:center;
+    margin: 0;
+    padding: 0;
+    font-size:300%;
+    color: black;
+    text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+}
+[data-Piece="b-King-atk"] {
+    align-items:center;
+    margin: 0;
+    padding: 0;
+    font-size:300%;
+    color: black;
+    text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+}
+[data-Piece="b-Pawn-atk"] {
+    align-items:center;
+    margin: 0;
+    padding: 0;
+    font-size:300%;
+    color: black;
+    text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+}
+[data-Piece="w-Rook-atk"] {
+    align-items:center;
+    margin: 0;
+    padding: 0;
+    font-size:300%;
+    color: white;
+    text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+}
+[data-Piece="w-Knight-atk"] {
+    align-items:center;
+    margin: 0;
+    padding: 0;
+    font-size:300%;
+    color: white;
+    text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+}
+[data-Piece="w-Bishop-atk"] {
+    align-items:center;
+    margin: 0;
+    padding: 0;
+    font-size:300%;
+    color: white;
+    text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+}
+[data-Piece="w-Queen-atk"] {
+    align-items:center;
+    margin: 0;
+    padding: 0;
+    font-size:300%;
+    color: white;
+    text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+}
+[data-Piece="w-King-atk"] {
+    align-items:center;
+    margin: 0;
+    padding: 0;
+    font-size:300%;
+    color: white;
+    text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+}
+[data-Piece="w-Pawn-atk"] {
+    align-items:center;
+    margin: 0;
+    padding: 0;
+    font-size:300%;
+    color: white;
+    text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+}
+
+
+/* .notification {
+    background-color: #555;
+    color: white;
+    text-decoration: none;
+    padding: 15px 26px;
+    position: relative;
+    display: inline-block;
+    border-radius: 2px;
+}
+
+.notification:hover {
+background: red;
+}
+
+.notification .badge {
+position: absolute;
+top: -10px;
+right: -10px;
+padding: 5px 10px;
+border-radius: 50%;
+background: red;
+color: white;
+} */
+
+
+/* #notifContent {
+    background-color:var(--blueish);
+    text-align: center;
+    justify-content: center;
+} */
+
+
+.list-group{
+    padding:3px;
+    justify-content: space-between;
+}
+/* Clean up the modals for friend request */
+
+#giBadge{
+    /* Number of game invites */
+}
+#frBadge{
+    /* Number of friend requests */
+}
+
+@keyframes circle {
+    0% {
+        background-color: var(--orange);
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    
+}
+
+
+

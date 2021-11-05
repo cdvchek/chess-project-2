@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href= "https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="font-effect-shadow-multiple"> Let's play Chess!</h1>
+        <div class = "row">
+            <div class="chess-piece-picture col-3" id="left-image">
+                <img src="./assets/image (1).png" class="img-fluid" alt="Responsive image">
+            </div>
+            <div class="col-1"></div>
+            <div class = "col-4" id="form">
+                <form id="login-form" class="rounded">
+                    <h2>Log In</h2>
+
+                    <label for="emaillogin" class="form-label">Email address</label>
+                    <input type="text" class="form-control" id="email-login" placeholder = "email">
+
+                    <label for="passwordlogin" class="form-label">Password</label>
+                    <input type="text" class="form-control" id="password-login" placeholder ="password">
+
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Log In</button>
+                </form>
+                <form id="signup-form">
+                    <h2>Sign Up</h2>
+
+                    <label for="emailsignup" class="form-label">Email address</label>
+                    <input type="text" class="form-control" id="email-signup" placeholder = "email">
+
+                    <label for="usernamesignup" class="form-label">User name</label>
+                    <input type="text" class="form-control" id="username-signup" placeholder = "email">
+
+                    <label for="passwordsignup" class="form-label">Password</label>
+                    <input type="text" class="form-control" id="password-signup" placeholder ="password">
+
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Sign Up</button>
+                </form>
+            </div>
+            <div class="col-1"></div>
+            <div class="chess-piece-picture col-3" id="right-image">
+                <img src="./assets/image.png" class="img-fluid" alt="Responsive image">
+            </div>
+        </div>
+    </div>
+<!-- <script src="../public/js/login.js"></script> -->
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</body>
+</html>
